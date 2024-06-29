@@ -4,7 +4,7 @@ const app = require('./app');
 
 dotenv.config({ path: './config.env' });
 const DB =
-  'mongodb+srv://a7med3del:nodejs123@cluster0.i0ugebs.mongodb.net/natours?retryWrites=true';
+  'mongodb+srv://a7med3del:nodejs123@cluster0.i0ugebs.mongodb.net/natours';
 mongoose
   // .connect(process.env.DATABASE_LOCAL, {
   .connect(DB, {
@@ -14,6 +14,7 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => console.log('DB connection successful..'));
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App running on port ${port}...`);
